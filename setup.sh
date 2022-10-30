@@ -17,7 +17,7 @@ mount /dev/vda3 /mnt
 swapon /dev/vda2 
 mount --mkdir /dev/vda1 /mnt/boot
 
-pacstrap /mnt base linux linux-firmware openssh networkmanager nano grub efibootmgr
+pacstrap /mnt base linux linux-firmware openssh networkmanager nano grub efibootmgr git
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
