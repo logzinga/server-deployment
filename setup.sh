@@ -3,11 +3,11 @@
 echo "What do you want to name this server? (no special characters)"
 read SERVERNAME
 
-parted /dev/sda mklabel gpt
-parted /dev/sda mkpart "EFI" fat32 1MiB 301MiB
-parted /dev/sda set 1 esp on
-parted /dev/sda mkpart "swap" linux-swap 301MiB 16GiB
-parted /dev/sda mkpart "root" ext4 16GiB 100%
+parted /dev/vda mklabel gpt
+parted /dev/vda mkpart "EFI" fat32 1MiB 301MiB
+parted /dev/vda set 1 esp on
+parted /dev/vda mkpart "swap" linux-swap 301MiB 16GiB
+parted /dev/vda mkpart "root" ext4 16GiB 100%
 
 mkfs.ext4 /dev/sda3
 mkswap /dev/sda2
