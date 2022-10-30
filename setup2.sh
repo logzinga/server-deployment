@@ -1,16 +1,22 @@
-!#/bin/bash
+#!/bin/bash
 
 systemctl enable NetworkManager 
 systemctl enable sshd
+cd /
+git clone https://github.com/logzinga/server-deployment
+cd server-deployment
+git checkout vm
+cd ..
+
 
 ln -sf /usr/share/zoneinfo/Australia/Sydney /etc/localtime
 
 hwclock --systohc
 
-cp files/locale.gen /etc/locale.gen
+cp /server-deployment/files/locale.gen /etc/locale.gen
 locale-gen
 
-cp files/locale.conf /etc/locale.conf
+cp /server-deployment/files/locale.conf /etc/locale.conf
 
 mkinitcpio -P
 
