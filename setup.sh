@@ -13,7 +13,7 @@ mkfs.ext4 /dev/vda3
 mkswap /dev/vda2
 mkfs.fat -F 32 /dev/vda1
 
-mount /dev/sda3 /mnt
+mount /dev/vda3 /mnt
 swapon /dev/vda2 
 mount --mkdir /dev/vda1 /mnt/boot
 
