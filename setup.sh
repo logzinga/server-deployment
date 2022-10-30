@@ -24,6 +24,8 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cp setup2.sh /mnt/usr/bin/setup
 chmod +777 /mnt/usr/bin/setup
 
+echo $SERVERNAME >> /mnt/etc/hostname 
+
 echo "When ready, type 'setup' to continue"
 arch-chroot /mnt
 
