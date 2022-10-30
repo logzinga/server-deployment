@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 systemctl enable NetworkManager 
 systemctl enable sshd
