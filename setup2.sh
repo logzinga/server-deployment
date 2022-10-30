@@ -1,5 +1,8 @@
 !#/bin/bash
 
+systemctl enable NetworkManager 
+systemctl enable sshd
+
 ln -sf /usr/share/zoneinfo/Australia/Sydney /etc/localtime
 
 hwclock --systohc
